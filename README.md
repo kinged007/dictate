@@ -39,7 +39,7 @@ on. If you have a newer Mac, use FreeFlow directly.
 
 ## Install
 
-    git clone <repo-url> dictate
+    git clone https://github.com/kinged007/dictate dictate
     cd dictate
     make install
 
