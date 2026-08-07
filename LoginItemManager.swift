@@ -4,7 +4,7 @@ import Foundation
 /// Uses the app's own executable path so the toggle works no matter where
 /// the app is installed (build/ or /Applications).
 enum LoginItemManager {
-    static let label = "com.josh.dictate"
+    static let label = "com.dictate"
 
     private static var launchAgentURL: URL {
         FileManager.default.homeDirectoryForCurrentUser

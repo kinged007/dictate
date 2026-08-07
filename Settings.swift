@@ -31,7 +31,7 @@ enum Settings {
     - If the transcript is empty or only filler, return exactly: EMPTY
     """
 
-    private static let keychainService = "com.josh.dictate"
+    private static let keychainService = "com.dictate"
 
     // MARK: - UserDefaults-backed
 

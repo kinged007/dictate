@@ -47,7 +47,7 @@ on. If you have a newer Mac, use FreeFlow directly.
 
 1. Builds `build/Dictate.app`
 2. Copies it to `/Applications/Dictate.app`
-3. Installs a LaunchAgent (`~/Library/LaunchAgents/com.josh.dictate.plist`)
+3. Installs a LaunchAgent (`~/Library/LaunchAgents/com.dictate.plist`)
    so Dictate starts automatically at login
 
 Then grant permissions on first use (see below).

@@ -9,7 +9,7 @@
 	<key>CFBundleExecutable</key>
 	<string>Dictate</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.josh.dictate</string>
+	<string>com.dictate</string>
 	<key>CFBundleVersion</key>
 	<string>1.0</string>
 	<key>CFBundleShortVersionString</key>

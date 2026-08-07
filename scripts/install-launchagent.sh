@@ -1,12 +1,12 @@
 #!/bin/bash
 # Installs a LaunchAgent so Dictate starts automatically at login.
-# Writes ~/Library/LaunchAgents/com.josh.dictate.plist pointing at the
+# Writes ~/Library/LaunchAgents/com.dictate.plist pointing at the
 # installed app, then loads it with launchctl (bootstrap on modern macOS,
 # falling back to the classic load -w which still works on 10.15).
 set -e
 
 APP_PATH="/Applications/Dictate.app/Contents/MacOS/Dictate"
-LABEL="com.josh.dictate"
+LABEL="com.dictate"
 PLIST="$HOME/Library/LaunchAgents/$LABEL.plist"
 
 mkdir -p "$HOME/Library/LaunchAgents"

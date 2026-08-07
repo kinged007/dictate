@@ -1,5 +1,5 @@
 APP_NAME = Dictate
-BUNDLE_ID = com.josh.dictate
+BUNDLE_ID = com.dictate
 BUILD_DIR = build
 APP_BUNDLE = $(BUILD_DIR)/$(APP_NAME).app
 CONTENTS = $(APP_BUNDLE)/Contents
