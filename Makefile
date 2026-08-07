@@ -9,6 +9,20 @@ SOURCES = main.swift AppDelegate.swift HotkeyManager.swift Recorder.swift Dictat
 ICON_SOURCE = Resources/AppIcon-Source.png
 ICON_ICNS = Resources/AppIcon.icns
 
+# Build for the machine we are on: Intel builds x86_64, Apple Silicon builds
+# arm64 (override with ARCH=... for cross builds).
+ARCH ?= $(shell uname -m)
+
+# Deployment target = the MINIMUM macOS the app will run on, not the OS it
+# was built on. Keep it as low as the code allows so the app runs on old
+# Macs too — this is the whole point of the project. arm64 only exists on
+# macOS 11+, so the floor for Apple Silicon builds is 11.0.
+ifeq ($(ARCH),arm64)
+MIN_MACOS = 11.0
+else
+MIN_MACOS = 10.15
+endif
+
 .PHONY: all clean run icon install uninstall
 
 all: $(MACOS_DIR)/$(APP_NAME)
@@ -18,7 +32,7 @@ $(MACOS_DIR)/$(APP_NAME): $(SOURCES) Info.plist $(ICON_ICNS)
 	swiftc \
 		-o "$(MACOS_DIR)/$(APP_NAME)" \
 		-sdk $(shell xcrun --show-sdk-path) \
-		-target x86_64-apple-macosx10.15 \
+		-target $(ARCH)-apple-macosx$(MIN_MACOS) \
 		$(SOURCES)
 	@cp Info.plist "$(CONTENTS)/"
 	@cp $(ICON_ICNS) "$(RESOURCES)/AppIcon.icns"

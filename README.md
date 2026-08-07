@@ -105,6 +105,13 @@ provider.
     make icon       # regenerate Resources/AppIcon.icns from the source PNG
     make clean
 
+The build targets the machine you're on: `ARCH` defaults to `uname -m`
+(x86_64 on Intel, arm64 on Apple Silicon; override with `ARCH=...`). The
+deployment target stays at the minimum supported macOS — 10.15 on Intel,
+11.0 on arm64 — so builds run on old Macs too. Building on a newer macOS
+with a 10.15 target is intentional and standard: the app uses only
+10.15-era APIs, and a lower deployment target never reduces compatibility.
+
 The icon source is drawn by `scripts/make-icon.swift` (an AppKit script):
 
     swift scripts/make-icon.swift   # regenerates Resources/AppIcon-Source.png
