@@ -32,15 +32,15 @@ swiftlint lint --strict  # if swiftlint installed
 
 ## Agent skills
 
-Use the repo's skills where relevant. For general polish tasks follow `docs/02-action-plan.md` and `data/repos.csv` in the profile plan workspace. Do not add abstractions until needed (KISS/YAGNI).
+Keep changes small and focused; do not add abstractions until needed (KISS/YAGNI).
 
 ## Permissions and secrets
 
 - No secrets in commits. API keys live in macOS Keychain at runtime, never in files or env.
-- Do not publish anything derived from private `tenantflex` org repos (see profile plan `docs/03-tenantflex.md`). Get org owner approval first.
+- Do not commit secrets (API keys, tokens, .env). Only `.env.example` belongs in the repo.
 - Never change repo visibility to private or delete the repo without explicit user confirmation.
 
 ## Project notes
 
-- Prebuilt binaries are not distributed — CI runners use newer SDKs. The app is built locally; a GitHub release with a built app is manual (requires the old Intel Mac, see `data/repos.csv` notes for `dictate`).
+- Prebuilt binaries are not distributed — CI runners use newer SDKs. The app is built locally; a GitHub release with a built app is created manually (requires the build machine).
 - Deployment target is 10.15 (Intel) / 11.0 (arm64); do not bump without reason.
