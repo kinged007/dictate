@@ -7,10 +7,6 @@
 
 Hotkey dictation for older Intel Macs — press `Cmd+Shift+D`, speak, and cleaned text lands at your cursor.
 
-![Demo](docs/screenshot.png)
-
-> Screenshot to be added. Shows the menu bar icon (idle/recording states) and the Settings window with transcription and cleanup model configuration.
-
 ## What it is
 
 Dictate is a minimal hotkey dictation app for Intel Macs on macOS 10.15 (Catalina) and newer. It records audio, transcribes via Groq Whisper, cleans the result with an LLM, and pastes the text at your cursor via simulated Cmd+V — in any app where Cmd+V works (Terminal, browser, editor).
